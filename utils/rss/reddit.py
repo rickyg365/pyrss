@@ -12,7 +12,10 @@ Reddit
 """
 
 def get_front_page():
-    return
+    response = requests.get("https://reddit.com/.rss")
+    if response.status_code != 200:
+        return None
+    return response
 
 def get_subreddit(subreddit_name: str, sort: str):
     valid_sort = [

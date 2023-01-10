@@ -1,4 +1,5 @@
 import os
+import requests
 
 from typing import List, Dict, Any
 from dataclasses import dataclass
@@ -9,7 +10,7 @@ from utils.file_handler.json import save_json, load_json
 # RSS Feeds
 from utils.rss.hackernews import get_hackernews_home
 from utils.rss.medium import get_medium_tag, get_medium_user
-from utils.rss.reddit import get_front_page, get_subreddit
+from utils.rss.reddit import get_reddit_front_page, get_subreddit
 from utils.rss.twitter import get_twitter_user
 from utils.rss.youtube import get_channel, get_playlist
 
@@ -60,6 +61,10 @@ RSS Feed Reader
 
 
 def main():
+    r_front_page = get_reddit_front_page()
+    if r_front_page is None:
+        print("failed to load")
+    print(r_front_page)
     return
 
 if __name__ == "__main__":

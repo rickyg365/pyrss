@@ -7,3 +7,5 @@ Gather rss feeds from a variety of sites
 - Youtube   
 - Medium  
 - Twitter
+
+inspired by: https://rsapkf.org/weblog/q2z
